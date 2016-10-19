@@ -16,6 +16,7 @@
 
 package me.iasc.microduino.blueserial;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.bluetooth.BluetoothAdapter;
@@ -26,6 +27,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.view.*;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -89,6 +91,8 @@ public class DeviceScanActivity extends ListActivity {
             finish();
             return;
         }
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN,Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 1);
     }
 
     @Override
