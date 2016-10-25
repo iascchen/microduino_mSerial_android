@@ -6,7 +6,7 @@ BLE Serial Reader／Writer with Phone.
 
 Exchange text message with Android APP and Microduino BLE SoftSerialSample
 
-Tested on Android 4.4.2.
+Tested on Android 6.
 
 You need 3 modules at least: Core, BT and USBTTL.
 
@@ -16,7 +16,7 @@ You need 3 modules at least: Core, BT and USBTTL.
 
 ## Microduino Arduino Sketch
 
-You can find some module named as : microduiXXXXX
+You can find some module named as : microduiXXXXX  or mCookieXXXX
 
 Please use this SoftSerialSample in Arduino IDE for Microduino, change all wavebaud to 9600
 
