@@ -49,11 +49,11 @@ public class BluetoothLeService extends Service {
     public final static UUID UUID_MD_RX_TX = UUID.fromString(SampleGattAttributes.MD_RX_TX);
     public final static UUID UUID_ETOH_RX_TX = UUID.fromString(SampleGattAttributes.ETOH_RX_TX);
 
-    public static UUID UUID_ELARA_SERIAL_UUID = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_SERVICE);
+//    public static UUID UUID_ELARA_SERIAL_UUID = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_SERVICE);
 //    public static UUID BLE_DOWNLOAD_IMAGE_NOTIFY_UUID = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_IMAGE_NOTIFY);
 //    public static UUID BLE_DOWNLOAD_IMAGE_BLOCK_UUID = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_IMAGE_BLOCK);
 //    public static UUID BLE_DOWNLOAD_ERROR_RESET_UUID = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_ERROR_RESET);
-    public static UUID UUID_ELARA_RX_TX = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_TRANS);
+//    public static UUID UUID_ELARA_RX_TX = UUID.fromString(SampleGattAttributes.BLE_DOWNLOAD_TRANS);
 
     private static final int STATE_DISCONNECTED = 0;
     private static final int STATE_CONNECTING = 1;
@@ -295,8 +295,7 @@ public class BluetoothLeService extends Service {
 
         // This is specific to RX_TX.
         if (UUID_MD_RX_TX.equals(characteristic.getUuid())
-                || UUID_ETOH_RX_TX.equals(characteristic.getUuid())
-                || UUID_ELARA_RX_TX.equals(characteristic.getUuid())) {
+                || UUID_ETOH_RX_TX.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
@@ -324,10 +323,6 @@ public class BluetoothLeService extends Service {
 
     public BluetoothGattService getSoftSerialService() {
         BluetoothGattService _service = mBluetoothGatt.getService(UUID_SOFT_SERIAL_SERVICE);
-
-        if (_service == null) {
-            _service = mBluetoothGatt.getService(UUID_ELARA_SERIAL_UUID);
-        }
 
         if (_service == null) {
             Log.d(TAG, "Soft Serial Service not found!");

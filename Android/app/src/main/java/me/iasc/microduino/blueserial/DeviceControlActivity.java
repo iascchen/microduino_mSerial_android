@@ -120,8 +120,6 @@ public class DeviceControlActivity extends Activity {
                     characteristicTX = gattService.getCharacteristic(BluetoothLeService.UUID_MD_RX_TX);
                 }else if(mDeviceName.startsWith("EtOH")) {
                     characteristicTX = gattService.getCharacteristic(BluetoothLeService.UUID_ETOH_RX_TX);
-                }else if(mDeviceName.startsWith("Elara")) {
-                    characteristicTX = gattService.getCharacteristic(BluetoothLeService.UUID_ELARA_RX_TX);
                 }
 
                 characteristicRX = characteristicTX;
